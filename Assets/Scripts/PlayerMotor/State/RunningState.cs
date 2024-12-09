@@ -38,6 +38,11 @@ public class RunningState : BaseState
         {
             motor.ChangeState(GetComponent<FallingState>());
         }
+        if(InputManager.Instance.SwipeDown)
+        {
+            Debug.Log("Swipe Down");
+            motor.ChangeState(GetComponent<SlidingState>());
+        }
     }
 
 }

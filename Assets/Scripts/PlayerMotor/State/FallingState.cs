@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class FallingState : BaseState
 {
-        public override Vector3 ProcessMotion()
+    public override void Construct()
+    {
+        motor.anim.SetTrigger("Fall");
+    }
+    public override Vector3 ProcessMotion()
     {
         //Apply gravity
         motor.ApplyGravity();
